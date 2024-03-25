@@ -1,18 +1,17 @@
 import styled from "styled-components";
 
-const TextInputContainer = styled.div`
+const ListContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 24px;
 `;
 
 const Label = styled.label`
-  display: block;
-  margin-bottom: 8px;
   font-size: 18px;
+  margin-bottom: 8px;
 `;
 
-const Input = styled.input`
+const Select = styled.select`
   box-sizing: border-box;
   border: none;
   border-radius: 5px;
@@ -23,15 +22,15 @@ const Input = styled.input`
   padding: 24px;
 `;
 
-const TextInput = ({ label, placeholder }) => {
-  const newPlaceholder = `${placeholder}...`;
-  
+const List = ({ items }) => {
   return (
-    <TextInputContainer>
-      <Label>{label}</Label>
-      <Input placeholder={newPlaceholder} />
-    </TextInputContainer>
-  );
+    <ListContainer>
+      <Label>Select a Department</Label>
+      <Select>
+        {items.map(item => <option key={item}>{item}</option>)}
+      </Select>
+    </ListContainer>
+  )
 }
 
-export default TextInput;
+export default List;

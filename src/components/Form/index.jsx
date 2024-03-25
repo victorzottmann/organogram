@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import TextInput from "../TextInput";
+import List from "../List";
 
 const FormSection = styled.section`
   display: flex;
@@ -16,6 +17,15 @@ const FormContainer = styled.form`
 `;
 
 const Form = () => {
+  const departments = [
+    "Programming",
+    "Front-End",
+    "Data Science",
+    "UI / UX Design",
+    "Mobile",
+    "Innovation and Management",
+  ];
+
   return (
     <FormSection>
       <FormContainer>
@@ -23,7 +33,7 @@ const Form = () => {
         <TextInput label="Name" placeholder="Enter your name" />
         <TextInput label="Role" placeholder="Enter your role" />
         <TextInput label="Profile Picture" placeholder="Insert a link to your profile picture" />
-        <TextInput label="Department" placeholder="Enter the name of your department" />
+        <List items={departments} />
       </FormContainer>
     </FormSection>
   );
