@@ -10,7 +10,7 @@ const Banner = styled.img`
   max-width: 100%;
 `;
 
-function Header() {
+const Header = () => {
   return (
     <HeaderContainer>
       <Banner src={banner} alt="Banner of the OrganoGram website" />
