@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import TextInput from "../TextInput";
 import List from "../List";
+import Button from "../Button";
 
 const FormSection = styled.section`
   display: flex;
@@ -34,6 +35,7 @@ const Form = () => {
         <TextInput label="Role" placeholder="Enter your role" />
         <TextInput label="Profile Picture" placeholder="Insert a link to your profile picture" />
         <List items={departments} />
+        <Button>Create Card</Button>
       </FormContainer>
     </FormSection>
   );
