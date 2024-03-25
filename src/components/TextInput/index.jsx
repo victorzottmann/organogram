@@ -23,13 +23,13 @@ const Input = styled.input`
   padding: 24px;
 `;
 
-const TextInput = ({ label, placeholder }) => {
+const TextInput = ({ label, required, placeholder }) => {
   const newPlaceholder = `${placeholder}...`;
   
   return (
     <TextInputContainer>
       <Label>{label}</Label>
-      <Input placeholder={newPlaceholder} />
+      <Input required={required} placeholder={newPlaceholder} />
     </TextInputContainer>
   );
 }

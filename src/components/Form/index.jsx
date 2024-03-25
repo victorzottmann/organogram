@@ -27,13 +27,18 @@ const Form = () => {
     "Innovation and Management",
   ];
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted");
+  }
+
   return (
     <FormSection>
-      <FormContainer>
+      <FormContainer onSubmit={handleSubmit}>
         <h2>Fill in the fields to create an employee card</h2>
-        <TextInput label="Name" placeholder="Enter your name" />
-        <TextInput label="Role" placeholder="Enter your role" />
-        <TextInput label="Profile Picture" placeholder="Insert a link to your profile picture" />
+        <TextInput label="Name" required={true} placeholder="Enter your name" />
+        <TextInput label="Role" required={true} placeholder="Enter your role" />
+        <TextInput label="Profile Picture" required={true} placeholder="Insert a link to your profile picture" />
         <List items={departments} />
         <Button>Create Card</Button>
       </FormContainer>
