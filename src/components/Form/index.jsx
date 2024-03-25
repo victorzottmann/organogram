@@ -19,11 +19,11 @@ const FormContainer = styled.form`
   box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.08);
 `;
 
-const Form = () => {
+const Form = ({ handleCreateCard }) => {
   const [name, setName] = useState("");
   const [role, setRole] = useState("");
   const [picture, setPicture] = useState("");
-  const [team, setTeam] = useState();
+  const [team, setTeam] = useState(""); // Set initial value for team state
 
   const teams = [
     "Programming",
@@ -36,7 +36,12 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Data:", name, role, picture, team);
+    handleCreateCard({
+      name,
+      role,
+      picture, 
+      team
+    });
   }
 
   return (
