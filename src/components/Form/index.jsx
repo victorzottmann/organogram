@@ -1,4 +1,6 @@
+import { useState } from "react";
 import styled from "styled-components";
+
 import TextInput from "../TextInput";
 import List from "../List";
 import Button from "../Button";
@@ -18,7 +20,12 @@ const FormContainer = styled.form`
 `;
 
 const Form = () => {
-  const departments = [
+  const [name, setName] = useState("");
+  const [role, setRole] = useState("");
+  const [picture, setPicture] = useState("");
+  const [team, setTeam] = useState();
+
+  const teams = [
     "Programming",
     "Front-End",
     "Data Science",
@@ -29,17 +36,41 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted");
+    console.log("Data:", name, role, picture, team);
   }
 
   return (
     <FormSection>
       <FormContainer onSubmit={handleSubmit}>
         <h2>Fill in the fields to create an employee card</h2>
-        <TextInput label="Name" required={true} placeholder="Enter your name" />
-        <TextInput label="Role" required={true} placeholder="Enter your role" />
-        <TextInput label="Profile Picture" required={true} placeholder="Insert a link to your profile picture" />
-        <List items={departments} />
+        <TextInput 
+          label="Name" 
+          required={true} 
+          placeholder="Enter your name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <TextInput 
+          label="Role" 
+          required={true} 
+          placeholder="Enter your role"
+          value={role}
+          onChange={(e) => setRole(e.target.value)}
+        />
+        <TextInput 
+          label="Profile Picture" 
+          required={true} 
+          placeholder="Insert a link to your profile picture"
+          value={picture}
+          onChange={(e) => setPicture(e.target.value)}
+        />
+        <List 
+          label="Select a Team"
+          required={true}
+          teams={teams} 
+          value={team}
+          onChange={(e) => setTeam(e.target.value)}
+        />
         <Button>Create Card</Button>
       </FormContainer>
     </FormSection>

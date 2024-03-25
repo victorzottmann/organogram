@@ -22,12 +22,15 @@ const Select = styled.select`
   padding: 24px;
 `;
 
-const List = ({ items }) => {
+const List = ({ label, teams, required, onChange }) => {
   return (
     <ListContainer>
-      <Label>Select a Department</Label>
-      <Select>
-        {items.map(item => <option key={item}>{item}</option>)}
+      <Label>{label}</Label>
+      <Select 
+        required={required} 
+        onChange={onChange}
+      >
+        {teams.map(team => <option key={team}>{team}</option>)}
       </Select>
     </ListContainer>
   )
