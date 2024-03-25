@@ -11,11 +11,12 @@ const Label = styled.label`
   margin-bottom: 8px;
   font-size: 18px;
   font-weight: 600;
-`
+`;
 
 const Input = styled.input`
   box-sizing: border-box;
   border: none;
+  border-radius: 5px;
   background-color: #fff;
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
   font-size: 16px;
@@ -24,10 +25,12 @@ const Input = styled.input`
 `;
 
 const TextInput = ({ label, placeholder }) => {
+  const newPlaceholder = `${placeholder}...`;
+  
   return (
     <TextInputContainer>
       <Label>{label}</Label>
-      <Input placeholder={placeholder} />
+      <Input placeholder={newPlaceholder} />
     </TextInputContainer>
   );
 }
