@@ -21,8 +21,7 @@ const App = () => {
         <Team 
           key={team.name} 
           name={team.name}
-          primary={team.colors.primary}
-          secondary={team.colors.secondary}
+          colors={team.colors}
         />
       ))}
     </div>
