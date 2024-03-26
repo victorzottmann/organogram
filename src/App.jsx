@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import Header from "./components/Header";
 import Form from "./components/Form";
+import Team from "./components/Team";
+import { teams } from "./data/index.js"
 
 const App = () => {
   const [employees, setEmployees] = useState([]);
@@ -14,7 +16,15 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <Form handleCreateCard={employee => handleCreateCard(employee)} />
+      <Form teams={teams} handleCreateCard={employee => handleCreateCard(employee)} />
+      {teams.map(team => (
+        <Team 
+          key={team.name} 
+          name={team.name}
+          primary={team.colors.primary}
+          secondary={team.colors.secondary}
+        />
+      ))}
     </div>
   );
 }

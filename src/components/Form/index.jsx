@@ -4,6 +4,7 @@ import styled from "styled-components";
 import TextInput from "../TextInput";
 import List from "../List";
 import Button from "../Button";
+import { teams } from "../../data/index.js"
 
 const FormSection = styled.section`
   display: flex;
@@ -23,16 +24,7 @@ const Form = ({ handleCreateCard }) => {
   const [name, setName] = useState("");
   const [role, setRole] = useState("");
   const [picture, setPicture] = useState("");
-  const [team, setTeam] = useState(""); // Set initial value for team state
-
-  const teams = [
-    "Programming",
-    "Front-End",
-    "Data Science",
-    "UI / UX Design",
-    "Mobile",
-    "Innovation and Management",
-  ];
+  const [team, setTeam] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
