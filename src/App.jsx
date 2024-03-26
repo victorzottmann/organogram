@@ -9,19 +9,18 @@ const App = () => {
   const [employees, setEmployees] = useState([]);
 
   const handleCreateCard = (employee) => {
-    console.log(employee)
     setEmployees([...employees, employee]);
   }
 
   return (
     <div className="App">
       <Header />
-      <Form teams={teams} handleCreateCard={employee => handleCreateCard(employee)} />
-      {teams.map(team => (
+      <Form teams={teams} handleCreateCard={(employee) => handleCreateCard(employee)} />
+      {teams.map(({ name, colors }) => (
         <Team 
-          key={team.name} 
-          name={team.name}
-          colors={team.colors}
+          key={name} 
+          name={name}
+          colors={colors}
         />
       ))}
     </div>

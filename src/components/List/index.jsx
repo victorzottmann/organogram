@@ -31,7 +31,7 @@ const List = ({ label, id, teams, required, onChange }) => {
         required={required} 
         onChange={onChange}
       >
-        {teams.map(team => <option key={team.name}>{team.name}</option>)}
+        {teams.map(({ name }) => <option key={name}>{name}</option>)}
       </Select>
     </ListContainer>
   )
