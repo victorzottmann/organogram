@@ -41,14 +41,16 @@ const Form = ({ handleCreateCard }) => {
       <FormContainer onSubmit={handleSubmit}>
         <h2>Fill in the fields to create an employee card</h2>
         <TextInput 
-          label="Name" 
+          label="Name"
+          id="name"
           required={true} 
           placeholder="Enter your name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <TextInput 
-          label="Role" 
+          label="Role"
+          id="role" 
           required={true} 
           placeholder="Enter your role"
           value={role}
@@ -56,6 +58,7 @@ const Form = ({ handleCreateCard }) => {
         />
         <TextInput 
           label="Profile Picture" 
+          id="picture"
           required={true} 
           placeholder="Insert a link to your profile picture"
           value={picture}
@@ -63,6 +66,7 @@ const Form = ({ handleCreateCard }) => {
         />
         <List 
           label="Select a Team"
+          id="team"
           required={true}
           teams={teams} 
           value={team}

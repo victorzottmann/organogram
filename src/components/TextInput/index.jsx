@@ -23,17 +23,19 @@ const Input = styled.input`
   padding: 24px;
 `;
 
-const TextInput = ({ label, required, placeholder, value, onChange }) => {
+const TextInput = ({ label, id, required, placeholder, value, onChange }) => {
   const newPlaceholder = `${placeholder}...`;
 
   return (
     <TextInputContainer>
-      <Label>{label}</Label>
+      <Label htmlFor={id}>{label}</Label>
       <Input 
+        id={id}
         required={required} 
         placeholder={newPlaceholder}
         value={value}
         onChange={onChange}
+        autoComplete="on"
       />
     </TextInputContainer>
   );

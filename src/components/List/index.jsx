@@ -22,11 +22,12 @@ const Select = styled.select`
   padding: 24px;
 `;
 
-const List = ({ label, teams, required, onChange }) => {
+const List = ({ label, id, teams, required, onChange }) => {
   return (
     <ListContainer>
-      <Label>{label}</Label>
+      <Label htmlFor={id}>{label}</Label>
       <Select 
+        id={id}
         required={required} 
         onChange={onChange}
       >
