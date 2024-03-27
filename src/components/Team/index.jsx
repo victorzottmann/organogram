@@ -18,7 +18,7 @@ const Team = ({ name, colors }) => {
   return (
     <TeamSection $colors={colors}>
       <TeamName $colors={colors}>{name}</TeamName>
-      <Card />
+      <Card employeeName="Victor Zottmann" role="Frontend Developer" />
     </TeamSection>
   );
 }
