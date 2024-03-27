@@ -21,31 +21,37 @@ export const teams = [
     },
   },
   { 
-    name: "DevOps" , 
+    name: "DevOps", 
     colors: {
       primary: "#E06B69", 
       secondary: "#FDE7E8",
     },
   },
   { 
-    name: "UI / UX Design" , 
+    name: "UI / UX Design", 
     colors: {
       primary: "#DB6EBF", 
       secondary: "#FAE9F5",
     },
   },
   { 
-    name: "Mobile" , 
+    name: "Mobile", 
     colors: {
       primary: "#FFBA05", 
       secondary: "#FFF5D9",
     },
   },
   { 
-    name: "Innovation and Management" , 
+    name: "Innovation and Management", 
     colors: {
       primary: "#FF8A29", 
       secondary: "#FFEEDF",
     },
+  },
+];
+
+export const employees = [
+  {
+
   },
 ];

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Card from "../Card";
 
 const TeamSection = styled.section`
   text-align: center;
@@ -17,7 +18,7 @@ const Team = ({ name, colors }) => {
   return (
     <TeamSection $colors={colors}>
       <TeamName $colors={colors}>{name}</TeamName>
-      <div>Card</div>
+      <Card />
     </TeamSection>
   );
 }
