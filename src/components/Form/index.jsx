@@ -34,10 +34,13 @@ const Form = ({ handleCreateCard }) => {
       picture, 
       team,
     });
-    setName("");
-    setRole("");
-    setPicture("");
-    setTeam("");
+
+    if (team) {
+      setName("");
+      setRole("");
+      setPicture("");
+      setTeam("");
+    }
   }
 
   return (
@@ -69,7 +72,7 @@ const Form = ({ handleCreateCard }) => {
           onChange={(e) => setPicture(e.target.value)}
         />
         <List 
-          label="Select a Team"
+          label="Team"
           id="team"
           required={true}
           teams={teams} 

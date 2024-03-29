@@ -15,7 +15,10 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <Form teams={teams} handleCreateCard={(employee) => handleCreateCard(employee)} />
+      <Form 
+        teams={teams} 
+        handleCreateCard={(employee) => handleCreateCard(employee)}
+      />
       {teams.map(({ teamName, colors }) => (
         <Team 
           key={teamName} 

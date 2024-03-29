@@ -31,6 +31,7 @@ const List = ({ label, id, teams, required, onChange }) => {
         required={required} 
         onChange={onChange}
       >
+        <option value=""></option>
         {teams.map(({ teamName }) => (
           <option key={teamName}>{teamName}</option>
         ))}
