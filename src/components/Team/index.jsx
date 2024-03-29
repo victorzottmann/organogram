@@ -21,19 +21,19 @@ const TeamMembersContainer = styled.div`
   margin-top: 32px;
 `;
 
-const Team = ({ teamName, colors, employees }) => {
+const Team = ({ teamName, employees, colors }) => {
   return (
     employees.length > 0 && (
       <TeamSection $colors={colors}>
         <TeamName $colors={colors}>{teamName}</TeamName>
         <TeamMembersContainer>
-          {employees.map((employee) => (
+          {employees.map(({ name, role, picture }) => (
             <Card
-              key={employee.name}
-              employeeName={employee.name}
-              role={employee.role}
-              picture={employee.picture}
-              colors={colors}
+              key={name}
+              employeeName={name}
+              role={role}
+              picture={picture}
+              bgColor={colors.primary}
             />
           ))}
         </TeamMembersContainer>

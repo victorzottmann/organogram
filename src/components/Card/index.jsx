@@ -5,8 +5,8 @@ const CardContainer = styled.div`
 `;
 
 const CardBanner = styled.div`
-  background-color: #f0f0f0;
-  border-radius: 10px 0;
+  background-color: ${({ $bgColor }) => $bgColor};
+  border-radius: 10px 10px 0 0;
 `;
 
 const Image = styled.img`
@@ -36,12 +36,13 @@ const Role = styled.h5`
   line-height: 22px;
   color: #212121;
   padding: 0 16px;
+  margin-bottom: 10px;
 `;
 
-const Card = ({ employeeName, role, picture }) => {
+const Card = ({ employeeName, role, picture, bgColor }) => {
   return (
     <CardContainer>
-      <CardBanner>
+      <CardBanner $bgColor={bgColor}>
         <Image src={picture} alt={employeeName} />
       </CardBanner>
       <CardDetails>
