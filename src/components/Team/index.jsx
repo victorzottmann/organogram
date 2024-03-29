@@ -23,21 +23,23 @@ const TeamMembersContainer = styled.div`
 
 const Team = ({ teamName, colors, employees }) => {
   return (
-    <TeamSection $colors={colors}>
-      <TeamName $colors={colors}>{teamName}</TeamName>
-      <TeamMembersContainer>
-        {employees.map(employee => (
-          <Card 
-            key={employee.name}
-            employeeName={employee.name}
-            role={employee.role}
-            picture={employee.picture}
-            colors={colors}
-          />
-        ))}
-      </TeamMembersContainer>
-    </TeamSection>
+    employees.length > 0 && (
+      <TeamSection $colors={colors}>
+        <TeamName $colors={colors}>{teamName}</TeamName>
+        <TeamMembersContainer>
+          {employees.map((employee) => (
+            <Card
+              key={employee.name}
+              employeeName={employee.name}
+              role={employee.role}
+              picture={employee.picture}
+              colors={colors}
+            />
+          ))}
+        </TeamMembersContainer>
+      </TeamSection>
+    )
   );
-}
+};
 
 export default Team;
