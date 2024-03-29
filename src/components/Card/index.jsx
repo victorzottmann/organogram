@@ -42,7 +42,7 @@ const Card = ({ employeeName, role, picture }) => {
   return (
     <CardContainer>
       <CardBanner>
-        <Image src={picture} alt="Victor Zottmann's profile" />
+        <Image src={picture} alt={employeeName} />
       </CardBanner>
       <CardDetails>
         <Name>{employeeName}</Name>
