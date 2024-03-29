@@ -14,18 +14,28 @@ const TeamName = styled.h3`
   border-bottom: 4px solid ${({ $colors }) => $colors.primary};
 `;
 
+const TeamMembersContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 32px;
+`;
+
 const Team = ({ teamName, colors, employees }) => {
   return (
     <TeamSection $colors={colors}>
       <TeamName $colors={colors}>{teamName}</TeamName>
-      {employees.map(employee => (
-        <Card 
-          key={employee.name}
-          employeeName={employee.name}
-          role={employee.role}
-          picture={employee.picture}
-        />
-      ))}
+      <TeamMembersContainer>
+        {employees.map(employee => (
+          <Card 
+            key={employee.name}
+            employeeName={employee.name}
+            role={employee.role}
+            picture={employee.picture}
+            colors={colors}
+          />
+        ))}
+      </TeamMembersContainer>
     </TeamSection>
   );
 }

@@ -21,7 +21,7 @@ const App = () => {
           key={teamName} 
           teamName={teamName}
           colors={colors}
-          employees={employees}
+          employees={employees.filter(employee => employee.team === teamName)}
         />
       ))}
     </div>

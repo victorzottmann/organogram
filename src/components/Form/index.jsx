@@ -32,7 +32,7 @@ const Form = ({ handleCreateCard }) => {
       name,
       role,
       picture, 
-      team
+      team,
     });
   }
 
