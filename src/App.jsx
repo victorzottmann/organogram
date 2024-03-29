@@ -16,11 +16,12 @@ const App = () => {
     <div className="App">
       <Header />
       <Form teams={teams} handleCreateCard={(employee) => handleCreateCard(employee)} />
-      {teams.map(({ name, colors }) => (
+      {teams.map(({ teamName, colors }) => (
         <Team 
-          key={name} 
-          name={name}
+          key={teamName} 
+          teamName={teamName}
           colors={colors}
+          employees={employees}
         />
       ))}
     </div>

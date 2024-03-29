@@ -38,11 +38,11 @@ const Role = styled.h5`
   padding: 0 16px;
 `;
 
-const Card = ({ employeeName, role, profilePicture }) => {
+const Card = ({ employeeName, role, picture }) => {
   return (
     <CardContainer>
       <CardBanner>
-        <Image src="https://github.com/victorzottmann.png" alt="Victor Zottmann's profile" />
+        <Image src={picture} alt="Victor Zottmann's profile" />
       </CardBanner>
       <CardDetails>
         <Name>{employeeName}</Name>

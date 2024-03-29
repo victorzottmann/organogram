@@ -14,11 +14,18 @@ const TeamName = styled.h3`
   border-bottom: 4px solid ${({ $colors }) => $colors.primary};
 `;
 
-const Team = ({ name, colors }) => {
+const Team = ({ teamName, colors, employees }) => {
   return (
     <TeamSection $colors={colors}>
-      <TeamName $colors={colors}>{name}</TeamName>
-      <Card employeeName="Victor Zottmann" role="Frontend Developer" />
+      <TeamName $colors={colors}>{teamName}</TeamName>
+      {employees.map(employee => (
+        <Card 
+          key={employee.name}
+          employeeName={employee.name}
+          role={employee.role}
+          picture={employee.picture}
+        />
+      ))}
     </TeamSection>
   );
 }
