@@ -34,6 +34,10 @@ const Form = ({ handleCreateCard }) => {
       picture, 
       team,
     });
+    setName("");
+    setRole("");
+    setPicture("");
+    setTeam("");
   }
 
   return (
